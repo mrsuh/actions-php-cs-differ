@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - image: docker://mrsuh/actions-php-cs-differ
+      - name: 'PHP CS Differ'
+        uses: docker://mrsuh/actions-php-cs-differ
         with:
-          args: 'src/'
+          directory: 'src/'
 ```
 
 ## TypeHints
