@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: PHP CS Differ
-        uses: mrsus/actions-php-cs-differ@master
+        uses: docker://mrsuh/actions-php-cs-differ@master
         with:
           directory: 'src/'
 ```

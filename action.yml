@@ -11,6 +11,6 @@ inputs:
     default: .
 runs:
     using: 'docker'
-    image: 'Dockerfile'
+    image: 'docker://mrsuh/actions-php-cs-differ'
     args:
         - "${{ inputs.directory }}"
