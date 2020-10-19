@@ -1,6 +1,6 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()->in('/code');
+$finder = PhpCsFixer\Finder::create()->in('/github/workspace');
 
 return PhpCsFixer\Config::create()
                         ->setFinder($finder)
