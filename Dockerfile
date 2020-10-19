@@ -16,6 +16,4 @@ ADD config.php /app
 
 ADD entrypoint.sh /
 
-WORKDIR /code/
-
 ENTRYPOINT ["sh", "/entrypoint.sh"]
