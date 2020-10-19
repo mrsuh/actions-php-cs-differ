@@ -4,11 +4,7 @@ set -e
 
 PHP_FULL_VERSION=$(php -r 'echo phpversion();')
 
-if [ -z "$1" ]; then
-  ARGUMENTS="."
-else
-  ARGUMENTS="$1"
-fi
+ARGUMENTS="$@"
 
 php /app/php-cs-fixer --version
 echo "## Running PHP CS Fixer with arguments «${ARGUMENTS}»"

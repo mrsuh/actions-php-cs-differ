@@ -5,17 +5,16 @@ https://github.com/FriendsOfPHP/PHP-CS-Fixer/ with diff type only
 ## Usage
 .github/workflows/lint.yml
 ```yaml
-name: Main
+name: Lint
 on: [push, pull_request]
 jobs:
   php-cs-differ:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: PHP CS Differ
-        uses: docker://mrsuh/actions-php-cs-differ@master
+      - image: docker://mrsuh/actions-php-cs-differ
         with:
-          directory: 'src/'
+          args: 'src/'
 ```
 
 ## TypeHints

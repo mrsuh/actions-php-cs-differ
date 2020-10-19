@@ -4,13 +4,6 @@ author: 'mrsuh'
 branding:
     icon: 'check'
     color: 'blue'
-inputs:
-  directory:
-    description: "Directory to check"
-    required: false
-    default: .
 runs:
     using: 'docker'
     image: 'docker://mrsuh/actions-php-cs-differ'
-    args:
-        - "${{ inputs.directory }}"
