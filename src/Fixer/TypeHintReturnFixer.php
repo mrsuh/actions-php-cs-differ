@@ -90,7 +90,7 @@ final class TypeHintReturnFixer extends AbstractFixer
                 $typeToken    = $tokens[$typeIndex];
 
                 if (in_array($typeToken->getContent(), ['mixed', 'object'])) {
-                    $tokens->offsetSet($typeIndex, new Token(' type '));
+                    $tokens->offsetSet($typeIndex, new Token('type'));
                 }
 
                 continue;
