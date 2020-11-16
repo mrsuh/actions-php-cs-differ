@@ -83,6 +83,16 @@ final class TypeHintReturnFixer extends AbstractFixer
             $startIndex = $tokens->getNextTokenOfKind($index, ['{', ';']);
 
             if ($this->hasReturnTypeHint($tokens, $startIndex)) {
+
+                $endFuncIndex = $tokens->getPrevTokenOfKind($startIndex, [')']);
+                $colonIndex   = $tokens->getNextMeaningfulToken($endFuncIndex);
+                $typeIndex    = $tokens->getNextNonWhitespace($colonIndex);
+                $typeToken    = $tokens[$typeIndex];
+
+                if (in_array($typeToken->getContent(), ['mixed', 'object'])) {
+                    $tokens->offsetSet($typeIndex, new Token(' type '));
+                }
+
                 continue;
             }
 

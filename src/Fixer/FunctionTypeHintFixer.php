@@ -59,6 +59,10 @@ final class FunctionTypeHintFixer extends AbstractFixer
 
                 if ($type instanceof TypeAnalysis) {
 
+                    if (in_array($type->getName(), ['mixed', 'object'])) {
+                        $tokens->offsetSet($type->getStartIndex(), new Token(' type '));
+                    }
+
                     continue;
                 }
 
